@@ -16,7 +16,7 @@ expect version 5.45
 1. Copy the index.php into the web directory.
 
 ---
-## Desciption
+## Description
 [ssh-client] expect scp_file.exp [ssh-server] [username] [password] [indirect-server] 
 spawn ssh [username]@[ssh-server] 
 
