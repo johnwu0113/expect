@@ -1,6 +1,11 @@
 # Indirect SCP
 
 ## Information
+
+[ssh-client]#  cat /etc/redhat-release
+
+CentOS Linux release 7.9.2009 (Core)
+
 [ssh-client]#  expect -v
 expect version 5.45
 ---
