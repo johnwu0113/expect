@@ -1,0 +1,29 @@
+#!/usr/bin/expect -f
+
+set HOST [lindex $argv 0]
+set USER [lindex $argv 1]
+set PASS [lindex $argv 2]
+set REMOTE_IP [lindex $argv 3]
+set timeout 10  
+
+spawn ssh $USER@$HOST
+match_max 100000
+
+expect "*?assword:*" {
+	send -- "$PASS\r"
+}
+
+expect "#" {
+	send -- "[scp CLI on ssh-server]\r"
+	expect "yes/no" { 
+		send "yes\r"
+		expect "*?assword" { send "[indirect-server's password]\r" }
+		} "*?assword" { send "[indirect-server's password]\r" } 
+} 
+
+expect "#" {
+        send -- "logout\r"
+	} 
+
+expect eof
+exit 
