@@ -12,7 +12,7 @@ expect version 5.45
 
 ---
 
-## Delpoy 
+## Delpoy
 1. Copy the index.php into the web directory.
 
 ---
